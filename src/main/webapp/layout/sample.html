@@ -1,0 +1,31 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea Input Validation</title>
+    <script>
+        // Function to remove invalid characters
+        function cleanInput(event) {
+            const regex = /[^A-Za-z0-9-]/g; // Match any character that is NOT a letter, number, or hyphen
+            const input = event.target.value;
+
+            // Remove invalid characters
+            event.target.value = input.replace(regex, '');
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="textarea">Enter text:</label><br>
+        <textarea id="textarea" name="textarea" rows="4" cols="50" oninput="cleanInput(event)" required></textarea>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

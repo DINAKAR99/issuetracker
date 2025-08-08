@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC                                                                       
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+
+   <!-- base definition for main template -->
+   <!-- <definition name="base.defination" template="/layouts/main.jsp">
+		<put-attribute name="title" value="Telangana State Public Service Commission" />
+		<put-attribute name="header" value="/layouts/header.jsp" />
+		 <put-attribute name="menu" value="/layouts/menu.jsp"/> 
+		<put-attribute name="body" value="" />
+		 <put-attribute name="footer" value="/layouts/footer.jsp"></put-attribute>
+	</definition> -->
+
+   <definition name="common" template="/layout/main.jsp">
+      <put-attribute name="header" value="/layout/header.jsp" />
+      <put-attribute name="content" value="" />
+      <put-attribute name="menu" value="/layout/menu.jsp" />
+      <put-attribute name="footer" value="/layout/footer.jsp" />
+   </definition>
+
+   <definition name="loginCommon" template="/layout/main.jsp">
+      <put-attribute name="header" value="/layout/header.jsp" />
+      <put-attribute name="content" value="" />
+      <put-attribute name="menu" value="/layout/menu.jsp" />
+      <put-attribute name="footer" value="/layout/footer.jsp" />
+   </definition>
+
+   <definition name="blank" template="/layout/main.jsp">
+      <put-attribute name="content" value="" />
+   </definition>
+
+   <definition name="index" extends="common">
+      <put-attribute name="content" value="/views/index.jsp" />
+   </definition>
+
+
+
+   <definition name="changePassword" extends="common">
+      <put-attribute name="content" value="/views/changePassword.jsp" />
+   </definition>
+
+   <definition name="login" extends="loginCommon">
+      <put-attribute name="content" value="/views/login.jsp" />
+   </definition>
+   <definition name="raiseIssue" extends="common">
+      <put-attribute name="content" value="/views/raiseIssue.jsp" />
+   </definition>
+   <definition name="viewTicket" extends="common">
+      <put-attribute name="content" value="/views/viewTicket.jsp" />
+   </definition>
+   <definition name="submittedIssue" extends="loginCommon">
+      <put-attribute name="content" value="/views/submittedIssue.jsp" />
+   </definition>
+   <definition name="dashboard" extends="loginCommon">
+      <put-attribute name="content" value="/views/dashboard.jsp" />
+   </definition>
+
+   <definition name="vraDetails" extends="common">
+      <put-attribute name="content" value="/views/vraDetails.jsp" />
+   </definition>
+
+   <definition name="vraDetailsForAdmin" extends="common">
+      <put-attribute name="content" value="/views/vraDetailsForAdmin.jsp" />
+   </definition>
+
+   <definition name="distVacDetailsForAdmin" extends="common">
+      <put-attribute name="content" value="/views/distVacDetailsForAdmin.jsp" />
+   </definition>
+
+   <definition name="dashboardReport" extends="common">
+      <put-attribute name="content" value="/views/dashboardReport.jsp" />
+   </definition>
+
+   <definition name="distWiseDashboardReport" extends="common">
+      <put-attribute name="content" value="/views/distWiseDashboardReport.jsp" />
+   </definition>
+
+   <definition name="vraFormDetails" extends="common">
+      <put-attribute name="content" value="/views/vraFormDetails.jsp" />
+   </definition>
+
+   <definition name="vraOptions" extends="common">
+      <put-attribute name="content" value="/views/vraOptions.jsp" />
+   </definition>
+
+   <definition name="vacancyDetails" extends="common">
+      <put-attribute name="content" value="/views/vacancyDetails.jsp" />
+   </definition>
+
+   <definition name="distVacancyDetails" extends="common">
+      <put-attribute name="content" value="/views/distVacancyDetails.jsp" />
+   </definition>
+
+   <definition name="vacancyFormDetails" extends="common">
+      <put-attribute name="content" value="/views/vacancyFormDetails.jsp" />
+   </definition>
+
+   <definition name="vraAllotment" extends="common">
+      <put-attribute name="content" value="/views/vraAllotment.jsp" />
+   </definition>
+
+   <definition name="addProject" extends="common">
+      <put-attribute name="content" value="/views/createProject.jsp" />
+   </definition>
+
+   <definition name="addModule" extends="common">
+      <put-attribute name="content" value="/views/addModule.jsp" />
+   </definition>
+
+   <definition name="viewModule" extends="common">
+      <put-attribute name="content" value="/views/viewModules.jsp" />
+   </definition>
+
+   <definition name="mapProjectModulesToEmployee" extends="common">
+      <put-attribute name="content" value="/views/projectEmployeeMapping.jsp" />
+   </definition>
+
+   <definition name="moduleStatus" extends="common">
+      <put-attribute name="content" value="/views/rolewiseModuleStatus.jsp" />
+   </definition>
+
+   <definition name="rolewiseTaskMap" extends="common">
+      <put-attribute name="content" value="/views/rolewiseTasksList.jsp" />
+   </definition>
+
+   <definition name="viewTasks" extends="common">
+      <put-attribute name="content" value="/views/viewTasks.jsp" />
+   </definition>
+
+   <definition name="addTask" extends="common">
+      <put-attribute name="content" value="/views/addTask.jsp" />
+   </definition>
+
+   <definition name="employeeLevelMap" extends="common">
+      <put-attribute name="content" value="/views/employeeLevelMap.jsp" />
+   </definition>
+
+   <definition name="updateStatus" extends="common">
+      <put-attribute name="content" value="/views/updateStatus.jsp" />
+   </definition>
+
+   <definition name="workflowStatus" extends="common">
+      <put-attribute name="content" value="/views/workflowStatus.jsp" />
+   </definition>
+
+   <definition name="taskReport" extends="common">
+      <put-attribute name="content" value="/views/taskReport.jsp" />
+   </definition>
+
+   <definition name="assignTask" extends="common">
+      <put-attribute name="content" value="/views/AssignTaskToEmployee.jsp" />
+   </definition>
+
+   <definition name="exceptionReport" extends="common">
+      <put-attribute name="content" value="/views/exceptionReport.jsp" />
+   </definition>
+
+   <definition name="projectTaskStatus" extends="common">
+      <put-attribute name="content" value="/views/projectTaskStatus.jsp" />
+   </definition>
+   <definition name="Registration" extends="common">
+      <put-attribute name="content" value="/views/Registration.jsp" />
+   </definition>
+   <definition name="employeeLevel" extends="common">
+      <put-attribute name="content" value="/views/employeeLevel.jsp" />
+   </definition>
+   <definition name="elm" extends="common">
+      <put-attribute name="content" value="/views/elm.jsp" />
+   </definition>
+   <definition name="projectType" extends="common">
+      <put-attribute name="content" value="/views/projectType.jsp" />
+   </definition>
+   <definition name="taskMaster" extends="common">
+      <put-attribute name="content" value="/views/taskMaster.jsp" />
+   </definition>
+
+   <definition name="forgotPassword" extends="loginCommon">
+      <put-attribute name="content" value="/views/forgotPassword.jsp" />
+   </definition>
+
+   <definition name="roleMaster" extends="common">
+      <put-attribute name="content" value="/views/roleMaster.jsp" />
+   </definition>
+   <definition name="ProjectTaskReport" extends="common">
+      <put-attribute name="content" value="/views/ProjectTaskReport.jsp" />
+   </definition>
+   <definition name="vraStatusDetails" extends="common">
+      <put-attribute name="content" value="/views/vraStatusDetails.jsp" />
+   </definition>
+   <definition name="addPostCategory" extends="common">
+      <put-attribute name="content" value="/views/addPostCategory.jsp" />
+   </definition>
+
+   <definition name="issueTrackerReport" extends="loginCommon">
+      <put-attribute name="content" value="/views/issueTrackerReport.jsp" />
+   </definition>
+
+   <definition name="issueTrackerDetails" extends="loginCommon">
+      <put-attribute name="content" value="/views/issueTrackerDetails.jsp" />
+   </definition>
+
+   <definition name="issueTrackerApproval" extends="loginCommon">
+      <put-attribute name="content" value="/views/issueTrackerApproval.jsp" />
+   </definition>
+   <definition name="raisedTickets" extends="loginCommon">
+      <put-attribute name="content" value="/views/raisedTickets.jsp" />
+   </definition>
+   <definition name="officerDashboard" extends="loginCommon">
+      <put-attribute name="content" value="/views/officerDashboard.jsp" />
+   </definition>
+   <definition name="mainReport" extends="loginCommon">
+      <put-attribute name="content" value="/views/mainReport.jsp" />
+   </definition>
+   <definition name="issueTrackerReportView" extends="loginCommon">
+      <put-attribute name="content" value="/views/issueTrackerReportView.jsp" />
+   </definition>
+   
+</tiles-definitions>
