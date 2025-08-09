@@ -2,7 +2,7 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ dina ] # build when main branch updates
+    branches: [ dina ] # Trigger on dina branch pushes
 
 jobs:
   build:
@@ -13,15 +13,32 @@ jobs:
       packages: write
 
     steps:
+      # 1️⃣ Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Log in to GitHub Container Registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      # 2️⃣ Log in to GitHub Container Registry
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
+      # 3️⃣ Build Docker image (force lowercase owner)
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository_owner,, }}/issuetracker:latest .
+        run: |
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker build -t ghcr.io/$OWNER/issuetracker:latest .
 
+      # 4️⃣ Push Docker image
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository_owner,, }}/issuetracker:latest
+        run: |
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker push ghcr.io/$OWNER/issuetracker:latest
 
+      # 5️⃣ (Optional) Deploy to Render
+      # Uncomment if you want Render deployment via API
+      # - name: Deploy to Render
+      #   run: |
+      #     curl -X POST \
+      #       -H "Accept: application/json" \
+      #       -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+      #       -d '{"serviceId":"${{ secrets.RENDER_SERVICE_ID }}"}' \
+      #       https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys
