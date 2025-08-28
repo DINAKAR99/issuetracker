@@ -13,7 +13,7 @@
 	<groupId>in.gov.cgg</groupId>
 	<artifactId>issueTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>issueTracker</name>
 	<description>issue Tracker project</description>
 
