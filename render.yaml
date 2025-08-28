@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: issuetracker
+    env: docker
+    plan: free
+    repo: https://github.com/DINAKAR99/issuetracker
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: jdbc:postgresql://dpg-d2armi8gjchc73ekm9vg-a.singapore-postgres.render.com:5432/issuetracker_6ki2
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: dinakar
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: vQjuC9G79Prt8jLWhJLueiuJZPDOD9vc
+          property: password
